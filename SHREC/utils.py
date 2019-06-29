@@ -30,7 +30,7 @@ def sampling_frame(p,C):
 from scipy.spatial.distance import cdist
 def get_CG(p,C):
     M = []
-    iu = np.triu_indices(C.joint_n,0,C.joint_n+1)
+    iu = np.triu_indices(C.joint_n,1,C.joint_n)
     for f in range(C.frame_l):
         #distance max 
         d_m = cdist(p[f],np.concatenate([p[f],np.zeros([1,C.joint_d])]),'euclidean')       

@@ -42,8 +42,7 @@ def get_CG_double(p_0,p_1,C):
         d_m_0 = cdist(p_0[f][C.key_ind,:],p_0[f],'euclidean').flatten()
         d_m_1 = cdist(p_1[f][C.key_ind,:],p_1[f],'euclidean').flatten()
         d_m_01 = cdist(p_0[f][C.key_ind,:],p_1[f],'euclidean').flatten()
-        d_m_10 = cdist(p_1[f][C.key_ind,:],p_0[f],'euclidean').flatten() 
-        
+        d_m_10 = cdist(p_1[f][C.key_ind,:],p_0[f],'euclidean').flatten()  
         M_0.append(np.concatenate([d_m_0,d_m_01]))
         M_1.append(np.concatenate([d_m_1,d_m_10]))
  
@@ -51,12 +50,7 @@ def get_CG_double(p_0,p_1,C):
     M_1 = np.stack(M_1)   
     return M_0,M_1
 
-def normlize_range(p):
-    # normolize to start point
-    p[:,:,0] = p[:,:,0]-np.mean(p[0,:,0])
-    p[:,:,1] = p[:,:,1]-np.mean(p[0,:,1])
-    p[:,:,2] = p[:,:,2]-np.mean(p[0,:,2])
-    return p
+
 
 def sampling_frame_double(p_0,p_1,C):
     full_l = p_0.shape[0] # full length
