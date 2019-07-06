@@ -3,14 +3,23 @@ import os
 import pandas as pd
 import random
 import scipy.ndimage.interpolation as inter
-from transforms3d.euler import euler2mat, mat2euler
+from scipy.signal import medfilt 
 
-def zoom(p,target_l=32,joints_num=22,joints_dim=3):
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.metrics import confusion_matrix
+
+###################################################################################
+    
+    
+#Rescale to be 64 frames
+def zoom(p,target_l=64,joints_num=25,joints_dim=3):
     l = p.shape[0]
     p_new = np.empty([target_l,joints_num,joints_dim]) 
     for m in range(joints_num):
         for n in range(joints_dim):
-            p_new[:,m,n] = inter.zoom(p[:,m,n],target_l/l)[:target_l]
+            p_new[:,m,n] = medfilt(p_new[:,m,n],3)
+            p_new[:,m,n] = inter.zoom(p[:,m,n],target_l/l)[:target_l]         
     return p_new
 
 def sampling_frame(p,C):
@@ -46,9 +55,50 @@ def normlize_range(p):
     p[:,:,2] = p[:,:,2]-np.mean(p[:,:,2])
     return p
 
-from transforms3d.euler import euler2mat, mat2euler
-def rotaion_one(p,R):
-    p_new = np.zeros_like(p)
-    for i in range(len(p)):
-        p_new[i] = np.dot(R,p[i].T).T
-    return p_new
+
+
+
+def cm_analysis(y_true, y_pred, filename, labels, ymap=None, figsize=(8,8)):
+    """
+    Generate matrix plot of confusion matrix with pretty annotations.
+    The plot image is saved to disk.
+    args: 
+      y_true:    true label of the data, with shape (nsamples,)
+      y_pred:    prediction of the data, with shape (nsamples,)
+      filename:  filename of figure file to save
+      labels:    string array, name the order of class labels in the confusion matrix.
+                 use `clf.classes_` if using scikit-learn models.
+                 with shape (nclass,).
+      ymap:      dict: any -> string, length == nclass.
+                 if not None, map the labels & ys to more understandable strings.
+                 Caution: original y_true, y_pred and labels must align.
+      figsize:   the size of the figure plotted.
+    """
+    if ymap is not None:
+        y_pred = [ymap[yi] for yi in y_pred]
+        y_true = [ymap[yi] for yi in y_true]
+        labels = [ymap[yi] for yi in labels]
+    cm = confusion_matrix(y_true, y_pred, labels=labels)
+    cm_sum = np.sum(cm, axis=1, keepdims=True)
+    cm_perc = cm / cm_sum.astype(float) * 100
+    annot = np.empty_like(cm).astype(str)
+    nrows, ncols = cm.shape
+    for i in range(nrows):
+        for j in range(ncols):
+            c = cm[i, j]
+            p = cm_perc[i, j]
+            if i == j:
+                s = cm_sum[i]
+                #annot[i, j] = '%.1f%%\n%d/%d' % (p, c, s)
+                annot[i, j] = '%.1f' % (p)
+            elif c == 0:
+                annot[i, j] = ''
+            else:
+                #annot[i, j] = '%.1f%%\n%d' % (p, c)
+                annot[i, j] = '%.1f' % (p)
+    cm = pd.DataFrame(cm, index=labels, columns=labels)
+    cm.index.name = 'Actual'
+    cm.columns.name = 'Predicted'
+    fig, ax = plt.subplots(figsize=figsize)
+    sns.heatmap(cm, annot=annot, fmt='', ax=ax, cbar=False, cmap="YlGnBu")
+    plt.savefig(filename)

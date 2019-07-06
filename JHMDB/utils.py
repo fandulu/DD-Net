@@ -3,14 +3,19 @@ import os
 import pandas as pd
 import random
 import scipy.ndimage.interpolation as inter
-from transforms3d.euler import euler2mat, mat2euler
+from scipy.signal import medfilt 
 
-def zoom(p,target_l=32,joints_num=15,joints_dim=2):
+###################################################################################
+    
+    
+#Rescale to be 64 frames
+def zoom(p,target_l=64,joints_num=25,joints_dim=3):
     l = p.shape[0]
     p_new = np.empty([target_l,joints_num,joints_dim]) 
     for m in range(joints_num):
         for n in range(joints_dim):
-            p_new[:,m,n] = inter.zoom(p[:,m,n],target_l/l)[:target_l]
+            p_new[:,m,n] = medfilt(p_new[:,m,n],3)
+            p_new[:,m,n] = inter.zoom(p[:,m,n],target_l/l)[:target_l]         
     return p_new
 
 def sampling_frame(p,C):
@@ -27,6 +32,9 @@ def sampling_frame(p,C):
     p = zoom(p,C.frame_l,C.joint_n,C.joint_d)
     return p
 
+def norm_scale(x):
+    return (x-np.mean(x))/np.mean(x)
+
 from scipy.spatial.distance import cdist
 def get_CG(p,C):
     M = []
@@ -36,9 +44,7 @@ def get_CG(p,C):
         d_m = d_m[iu] 
         M.append(d_m)
     M = np.stack(M) 
+    M = norm_scale(M)
     return M
 
-def normlize_range(p):
-    p[:,:,0] = p[:,:,0]-np.mean(p[:,:,0])
-    p[:,:,1] = p[:,:,1]-np.mean(p[:,:,1])
-    return p
+

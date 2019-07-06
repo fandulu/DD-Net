@@ -3,10 +3,11 @@ import os
 import pandas as pd
 import random
 import scipy.ndimage.interpolation as inter
-from transforms3d.euler import euler2mat, mat2euler
+from scipy.signal import medfilt
 
 
 ###################################################################################
+    
     
 #Rescale to be 64 frames
 def zoom(p,target_l=64,joints_num=25,joints_dim=3):
@@ -14,40 +15,53 @@ def zoom(p,target_l=64,joints_num=25,joints_dim=3):
     p_new = np.empty([target_l,joints_num,joints_dim]) 
     for m in range(joints_num):
         for n in range(joints_dim):
-            p_new[:,m,n] = inter.zoom(p[:,m,n],target_l/l)[:target_l]
+            p_new[:,m,n] = medfilt(p_new[:,m,n],3)
+            p_new[:,m,n] = inter.zoom(p[:,m,n],target_l/l)[:target_l]         
     return p_new
 
 from scipy.spatial.distance import cdist
 
 def norm_scale(x):
-    return (x-np.min(x))/(np.max(x)-np.min(x))
+    return (x-np.mean(x))/np.mean(x)
+
 
 def get_CG_single(p,C):
     M = []
-    for f in range(C.frame_l):
-        #distance max 
-        d_m = cdist(p[f][C.key_ind,:],p[f],'euclidean')
-        d_m = d_m.flatten()
-        M.append(d_m)   
-    M = np.stack(M)  
+    iu = np.triu_indices(C.joint_n,1,C.joint_n)
+    for f in range(C.frame_l): 
+        d_m = cdist(p[f],p[f],'euclidean')       
+        d_m = d_m[iu] 
+        M.append(d_m)
+    M = np.stack(M)
     M = norm_scale(M)
     return M
+
 
 def get_CG_double(p_0,p_1,C):
     M_0 = []
     M_1 = []
-
+    # index refers to [0,1,2,3,4,5,7,8,9,11,12,13,14,15,16,17,18,19,20] to get [1, 3, 7, 11, 14, 18]
+    inter_ind = np.array([1,3,6,9,12,16])
+    
+    iu_self = np.triu_indices(C.joint_n,1,C.joint_n)
+    iu_inter = np.triu_indices(6,1,6)
+    
     for f in range(C.frame_l):
         #correlation graph 
-        d_m_0 = cdist(p_0[f][C.key_ind,:],p_0[f],'euclidean').flatten()
-        d_m_1 = cdist(p_1[f][C.key_ind,:],p_1[f],'euclidean').flatten()
-        d_m_01 = cdist(p_0[f][C.key_ind,:],p_1[f],'euclidean').flatten()
-        d_m_10 = cdist(p_1[f][C.key_ind,:],p_0[f],'euclidean').flatten()  
+        d_m_0 = cdist(p_0[f],p_0[f],'euclidean')[iu_self]
+        d_m_1 = cdist(p_1[f],p_1[f],'euclidean')[iu_self]
+        d_m_01 = cdist(p_0[f],p_1[f],'euclidean')[iu_inter]
+        d_m_10 = cdist(p_1[f],p_0[f],'euclidean')[iu_inter]
+        
         M_0.append(np.concatenate([d_m_0,d_m_01]))
         M_1.append(np.concatenate([d_m_1,d_m_10]))
  
     M_0 = np.stack(M_0)
-    M_1 = np.stack(M_1)   
+    M_1 = np.stack(M_1)
+    
+    M_0 = norm_scale(M_0)
+    M_1 = norm_scale(M_1)
+        
     return M_0,M_1
 
 
@@ -214,31 +228,6 @@ def rotaion_one(p,R):
         p_new[i] = np.dot(R,p[i].T).T
     return p_new
 
-################################################################################### 
-# following augumentations are not needed in our training, only for other baselines
 
-def shift_pose(p_0,p_1):
-    p_0_new = np.copy(p_0)
-    p_1_new = np.copy(p_1)
-    #global shift
-    d_x = random.uniform(-0.1, 0.1)
-    d_y = random.uniform(-0.1, 0.1)
-    d_z = random.uniform(-0.2, 0.2)
-    #local shift
-    d_x_0 = random.uniform(-0.1, 0.1)
-    d_y_0 = random.uniform(-0.1, 0.1)
-    d_z_0 = random.uniform(-0.1, 0.1)
-    d_x_1 = random.uniform(-0.1, 0.1)
-    d_y_1 = random.uniform(-0.1, 0.1)
-    d_z_1 = random.uniform(-0.1, 0.1)
-    
-    p_0_new[:,:,0] += d_x_0+d_x
-    p_0_new[:,:,1] += d_y_0+d_y
-    p_0_new[:,:,2] += d_z_0+d_z
-    p_1_new[:,:,0] += d_x_1+d_x
-    p_1_new[:,:,1] += d_y_1+d_y
-    p_1_new[:,:,2] += d_z_1+d_z
-    
-    return p_0_new,p_1_new
 
 
