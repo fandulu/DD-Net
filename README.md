@@ -26,7 +26,7 @@ Note: You can download the raw data and use our code to preprocess them, or, dir
 | 0.50 M | 78.0 | 
 | 0.15 M | 74.7|
 
-
+Note: if you want to test the speed, please try to run the model.predict() at leat twice and do not take the speed of first run, the model initialization takes extra time.
 ## 5.Citation
 If you find this code is helpful, thanks for citing our work as,
 ```
