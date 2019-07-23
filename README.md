@@ -10,8 +10,8 @@ conda env create -f=DD-Net_env.yml
 ```
 ### 2. go to the folder of JHMDB or SHREC to play with each dataset
 
-## Some results
-![](demo.png)
+## Problems this code try to alleviate
+<img src="https://github.com/fandulu/DD-Net/blob/master/demo.png" width="100">
 
 ## Citation
 If you find this code is helpful, thanks for citing our work as,
