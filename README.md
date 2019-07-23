@@ -1,4 +1,5 @@
-# DD-Net
+# DD-Net 
+(A Double-feature Double-motion Network)
 
 ## 1.About this code
 A lightweight network for body/hand action recognition model
