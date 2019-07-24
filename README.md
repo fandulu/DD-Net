@@ -2,7 +2,7 @@
 (A Double-feature Double-motion Network)
 
 ## 1.About this code
-A lightweight network for body/hand action recognition 
+A lightweight network for body/hand action recognition, implemented by keras tensorflow backend.
 
 ## 2.How to use this code
 ### (1) create an anaconda environment by following command
