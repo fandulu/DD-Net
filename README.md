@@ -13,9 +13,8 @@ conda env create -f=DD-Net_env.yml
 ### (2) go to the folder of JHMDB or SHREC to play with ipython notebooks.
 Note: You can download the raw data and use our code to preprocess them, or, directly use our preprocessed data under /data. 
 
-If you do not have enough resource to run this code, please go to use https://colab.research.google.com/drive/19gq3bUigdxIfyMCoWW93YhLEi1KQlBit.
-We have the preprocessed data under /data, you can download the data and upload them to colab->files,
-and then run our code on colab.
+### An alternative choice:
+If you do not have enough resource to run this code, please go to use https://colab.research.google.com/drive/19gq3bUigdxIfyMCoWW93YhLEi1KQlBit. We have the preprocessed data under /data, you can download the data and upload them to colab->files, and then run our code on colab.
 
 
 ## 3.Problems this code try to alleviate
