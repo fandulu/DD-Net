@@ -43,4 +43,5 @@ Eprint = {1907.09658},
 Eprinttype = {arXiv},
 }
 ```
-![Thanks!](demo.gif)
+![](demo.gif)
+*image_caption*
