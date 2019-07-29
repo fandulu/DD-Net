@@ -43,5 +43,5 @@ Eprint = {1907.09658},
 Eprinttype = {arXiv},
 }
 ```
-![](demo.gif)
+![](look.gif)
 *Hey, take a look! take a look!*
