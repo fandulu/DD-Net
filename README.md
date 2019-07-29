@@ -44,4 +44,4 @@ Eprinttype = {arXiv},
 }
 ```
 ![](demo.gif)
-*image_caption*
+*Hey, take a look!*
