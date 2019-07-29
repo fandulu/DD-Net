@@ -14,9 +14,7 @@ conda env create -f=DD-Net_env.yml
 Note: You can download the raw data and use our code to preprocess them, or, directly use our preprocessed data under /data. 
 
 ### An alternative choice:
-If you do not have enough resource to run this code, please go to use https://colab.research.google.com/drive/19gq3bUigdxIfyMCoWW93YhLEi1KQlBit. We have the preprocessed data under /data, you can download the data and upload them to colab->files, and then run our code on colab (we also give the code for plotting following demos).
-
-![What I am doing, can you guess?](demo.gif)
+If you do not have enough resource to run this code, please go to use https://colab.research.google.com/drive/19gq3bUigdxIfyMCoWW93YhLEi1KQlBit. We have the preprocessed data under /data, you can download the data and upload them to colab->files, and then run our code on colab.
 
 
 ## 3.Problems this code try to alleviate
@@ -45,3 +43,4 @@ Eprint = {1907.09658},
 Eprinttype = {arXiv},
 }
 ```
+![Thanks!](demo.gif)
