@@ -45,3 +45,7 @@ Eprinttype = {arXiv},
 ```
 ![](look.gif)
 *Hey, come take a look*
+
+
+## 6. Some related work you may be interested in
+[Activity recognition by phone IMU with Java implemented](https://github.com/fandulu/Build-your-IMU-based-activity-recognition-on-phone)
