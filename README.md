@@ -11,7 +11,11 @@ A lightweight network for body/hand action recognition, implemented by keras ten
 conda env create -f=DD-Net_env.yml
 ```
 ### (2) go to the folder of JHMDB or SHREC to play with ipython notebooks.
-Note: You can download the raw data and use our code to preprocess them, or, directly use our preprocessed data under /data. 
+Note: You can download the raw data and use our code to preprocess them, or, directly use our preprocessed data under /data.
+```
+JHMDB raw data download link:   http://jhmdb.is.tue.mpg.de/challenge/JHMDB/datasets
+SHREC raw data download link:   http://www-rech.telecom-lille.fr/shrec2017-hand/
+```
 
 ### An alternative choice:
 If you do not have enough resource to run this code, please go to use https://colab.research.google.com/drive/19gq3bUigdxIfyMCoWW93YhLEi1KQlBit. We have the preprocessed data under /data, you can download the data and upload them to colab->files, and then run our code on colab.
