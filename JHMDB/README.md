@@ -3,7 +3,7 @@
 ## 1. Download JHMDB dataset from 
 ```
 http://jhmdb.is.tue.mpg.de/challenge/JHMDB/datasets 
-(current this web seems unstable, I upload their data to 
+(Currently this web seems unstable, I upload their data to 
 https://drive.google.com/file/d/1H_-ByZMnLTXvrUzx6XZEuPy7rxX0XENB/view?usp=sharing
 please follow their licence to use it and cite their papers.) 
 ```
