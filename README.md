@@ -51,6 +51,3 @@ If you find this code is helpful, thanks for citing our work as,
 ```
 ![](look.gif)
 *Hey, come take a look*
-
-
-
