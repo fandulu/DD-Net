@@ -41,12 +41,12 @@ Note: if you want to test the speed, please try to run the model.predict() at le
 ## 5.Citation
 If you find this code is helpful, thanks for citing our work as,
 ```
-@online{yang2019ddnet,
-Author = {Fan Yang and Sakriani Sakti and Yang Wu and Satoshi Nakamura},
-Title = {Make Skeleton-based Action Recognition Model Smaller, Faster and Better},
-Year = {2019},
-Eprint = {1907.09658},
-Eprinttype = {arXiv},
+@inproceedings{yang2019ddnet,
+  title={Make Skeleton-based Action Recognition Model Smaller, Faster and Better},
+  author={Fan Yang and Sakriani Sakti and Yang Wu and Satoshi Nakamura},
+  booktitle={2019 ACM International Conference on Multimedia in Asia},
+  year={2019},
+  organization={ACM}
 }
 ```
 ![](look.gif)
