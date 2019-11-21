@@ -34,8 +34,9 @@ If you do not have enough resource to run this code, please go to use https://co
 
 |No. parameters | JHMDB|
 | :----: | :----: | 
-| 0.50 M | 78.0 | 
-| 0.15 M | 74.7|
+| 1.82 M | 77.2|
+| 0.50 M | 73.7 | 
+
 
 Note: if you want to test the speed, please try to run the model.predict() at leat twice and do not take the speed of first run, the model initialization takes extra time.
 ## 5.Citation
