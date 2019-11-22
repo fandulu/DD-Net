@@ -37,7 +37,7 @@ If you do not have enough resource to run this code, please go to use https://co
 | 1.82 M | 77.2|
 | 0.50 M | 73.7 | 
 
-There are space to improve the performance, for example, [anhminh3105](https://github.com/anhminh3105) pulls val_acc of each split over 80% on JHMDB by using weighted class to alleviate the skewed effect since 'walk' has ~3 times more data compared to others.
+There are space to further improve the performance, for example, [anhminh3105](https://github.com/anhminh3105) pulls val_acc of each split over 80% on JHMDB by using weighted class to alleviate the skewed effect since 'walk' has ~3 times more data compared to others.
 
 Note: if you want to test the speed, please try to run the model.predict() at leat twice and do not take the speed of first run, the model initialization takes extra time.
 ## 5.Citation
