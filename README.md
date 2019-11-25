@@ -37,8 +37,6 @@ If you do not have enough resource to run this code, please go to use https://co
 | 1.82 M | 77.2|
 | 0.50 M | 73.7 | 
 
-There are spaces to further improve the performance. For example, [anhminh3105](https://github.com/anhminh3105) pulls val_acc of each split over 80% on JHMDB by using weighted class to alleviate the skewed effect since 'walk' has ~3 times more data compared to others. And, after [zhc](https://github.com/muxizju) fixed a bug, the performanc on SHREC-14 was improved from 94.6 to 94.8 with 1.82M parameters and from 91.8 to 94.1 with 0.15M parameters.
-
 Note: if you want to test the speed, please try to run the model.predict() at leat twice and do not take the speed of first run, the model initialization takes extra time.
 ## 5.Citation
 If you find this code is helpful, thanks for citing our work as,
