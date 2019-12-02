@@ -44,7 +44,7 @@ If you find this code is helpful, thanks for citing our work as,
 @inproceedings{yang2019ddnet,
   title={Make Skeleton-based Action Recognition Model Smaller, Faster and Better},
   author={Fan Yang, Sakriani Sakti, Yang Wu, and Satoshi Nakamura},
-  booktitle={2019 ACM International Conference on Multimedia in Asia},
+  booktitle={ACM International Conference on Multimedia in Asia},
   year={2019},
   organization={ACM}
 }
