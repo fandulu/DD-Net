@@ -1,5 +1,6 @@
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/make-skeleton-based-action-recognition-model-1/skeleton-based-action-recognition-on-jhmdb-2d)](https://paperswithcode.com/sota/skeleton-based-action-recognition-on-jhmdb-2d?p=make-skeleton-based-action-recognition-model-1)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/make-skeleton-based-action-recognition-model-1/skeleton-based-action-recognition-on-shrec)](https://paperswithcode.com/sota/skeleton-based-action-recognition-on-shrec?p=make-skeleton-based-action-recognition-model-1)
+[![Open In Colab](https://colab.research.google.com/drive/19gq3bUigdxIfyMCoWW93YhLEi1KQlBit)
 
 # Update
 Thanks for [@muxizju](https://github.com/muxizju), [@pengfeiZhao1993](https://github.com/pengfeiZhao1993), and [@YLTsai0609](https://github.com/YLTsai0609) helped to fix bugs in this code. After fixing bugs, the performance is further improved.
@@ -22,9 +23,6 @@ Note: You can download the raw data and use our code to preprocess them, or, dir
 JHMDB raw data download link:   http://jhmdb.is.tue.mpg.de/challenge/JHMDB/datasets
 SHREC raw data download link:   http://www-rech.telecom-lille.fr/shrec2017-hand/
 ```
-
-### An alternative choice:
-If you do not have enough resource to run this code, please go to use https://colab.research.google.com/drive/19gq3bUigdxIfyMCoWW93YhLEi1KQlBit. We have the preprocessed data under /data, you can download the data and upload them to colab->files, and then run our code on colab.
 
 
 ## 3.Problems this code try to alleviate
