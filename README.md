@@ -18,7 +18,7 @@ A lightweight network for body/hand action recognition, implemented by keras ten
 git clone https://github.com/fandulu/DD-Net.git
 ```
 
-### (2) create an anaconda environment by the following command (I just noticed that the environment may not be available due to TensorFlow updating, so it is better to check the Colab setting and install the currently available environment)
+### (2) create an anaconda environment by the following command (I just noticed that the environment may not be available due to TensorFlow updating, so it is better to check the setting in [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/19gq3bUigdxIfyMCoWW93YhLEi1KQlBit) and install the currently available environment)
 ```
 conda env create -f=DD-Net_env.yml
 ```
