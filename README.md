@@ -10,6 +10,7 @@ A lightweight network for body/hand action recognition, implemented by keras ten
 ## 2.How to use this code
 ### (1) create an anaconda environment by following command
 ```
+git clone https://github.com/fandulu/DD-Net.git
 conda env create -f=DD-Net_env.yml
 ```
 ### (2) go to the folder of JHMDB or SHREC to play with ipython notebooks.
