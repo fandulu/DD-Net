@@ -13,12 +13,16 @@ Thanks for [@muxizju](https://github.com/muxizju), [@pengfeiZhao1993](https://gi
 A lightweight network for body/hand action recognition, implemented by keras tensorflow backend. It also could be the simplest tutorial code to start skeleton-based action recognition.
 
 ## 2.How to use this code
-### (1) create an anaconda environment by following command
+### (1) clone DD-Net
 ```
 git clone https://github.com/fandulu/DD-Net.git
+```
+
+### (2) create an anaconda environment by the following command (I just noticed that the environment may not be available due to TensorFlow updating, so it is better to check the Colab setting and install the currently available environment)Thanks for [@muxizju](https://github.com/muxizju), [@pengfeiZhao1993](https://github.com/pengfeiZhao1993), and [@YLTsai0609](https://github.com/YLTsai0609) helped to fix bugs in this code. After fixing bugs, the performance is further improved.
+```
 conda env create -f=DD-Net_env.yml
 ```
-### (2) go to the folder of JHMDB or SHREC to play with ipython notebooks.
+### (3) go to the folder of JHMDB or SHREC to play with ipython notebooks.
 Note: You can download the raw data and use our code to preprocess them, or, directly use our preprocessed data under /data.
 ```
 JHMDB raw data download link:   http://jhmdb.is.tue.mpg.de/challenge/JHMDB/datasets
