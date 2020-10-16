@@ -18,7 +18,7 @@ def zoom(p,target_l=64,joints_num=25,joints_dim=3):
     p_new = np.empty([target_l,joints_num,joints_dim]) 
     for m in range(joints_num):
         for n in range(joints_dim):
-            p_new[:,m,n] = medfilt(p_new[:,m,n],3)
+            p[:,m,n] = medfilt(p[:,m,n],3)
             p_new[:,m,n] = inter.zoom(p[:,m,n],target_l/l)[:target_l]         
     return p_new
 
