@@ -11,6 +11,8 @@ Updating code to current Keras environment.
 
 Thanks for [@muxizju](https://github.com/muxizju), [@pengfeiZhao1993](https://github.com/pengfeiZhao1993), and [@YLTsai0609](https://github.com/YLTsai0609) helped to fix bugs in this code. After fixing bugs, the performance is further improved.
 
+Thanks for [Nightwatch](https://github.com/BlurryLight), who made a pytorch version DD-Net. You can check it at [Pytorch DD-Net](https://github.com/BlurryLight/DD-Net-Pytorch)
+
 ## 1.About this code
 A lightweight network for body/hand action recognition, implemented by keras tensorflow backend. It also could be the simplest tutorial code to start skeleton-based action recognition.
 
