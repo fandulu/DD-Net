@@ -1,6 +1,6 @@
 # DD-Net on SHREC dataset
 
-[![Open In Colab](https://colab.research.google.com/drive/1jASRTHzsA03dZDC4yN29OK1G9L-l7jkP?usp=sharing)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1jASRTHzsA03dZDC4yN29OK1G9L-l7jkP?usp=sharing)
 
 ## 1. Download SHREC dataset from 
 ```
