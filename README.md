@@ -9,7 +9,7 @@
 # Update
 Updating code to current Keras environment.
 
-Thanks for [@muxizju](https://github.com/muxizju), [@pengfeiZhao1993](https://github.com/pengfeiZhao1993), and [@YLTsai0609](https://github.com/YLTsai0609) helped to fix bugs in this code. After fixing bugs, the performance is further improved.
+Thanks for [@muxizju](https://github.com/muxizju), [@pengfeiZhao1993](https://github.com/pengfeiZhao1993), and [@YLTsai0609](https://github.com/YLTsai0609) helped to fix bugs in this code. After fixing bugs, the performance is further improved - <span style="color:red">JHMDB 88% and SHREC 97 %</span>.
 
 Thanks for [Nightwatch](https://github.com/BlurryLight), who made a pytorch version DD-Net. You can check it at [Pytorch DD-Net](https://github.com/BlurryLight/DD-Net-Pytorch)
 
