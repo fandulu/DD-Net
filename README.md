@@ -25,7 +25,7 @@ A lightweight network for body/hand action recognition, implemented by keras ten
 git clone https://github.com/fandulu/DD-Net.git
 ```
 
-### (2) I just noticed that the environment may not be available due to TensorFlow updating, so it is better to check the setting in [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/19gq3bUigdxIfyMCoWW93YhLEi1KQlBit) and install the currently available environment)
+### (2) I just noticed that the environment may not be available due to TensorFlow updating, so it is better to check the setting in [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/19gq3bUigdxIfyMCoWW93YhLEi1KQlBit) and install the currently available environment
 
 ### (3) go to the folder of JHMDB or SHREC to play with ipython notebooks.
 Note: You can download the raw data and use our code to preprocess them, or, directly use our preprocessed data under /data.
