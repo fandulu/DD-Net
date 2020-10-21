@@ -1,4 +1,4 @@
-# DD-Net ([arxiv paper](https://arxiv.org/pdf/1907.09658.pdf))
+# DD-Net 
 (A Double-feature Double-motion Network)
 [![](mics/paper.png)](https://arxiv.org/pdf/1907.09658.pdf)
 
