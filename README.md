@@ -1,5 +1,6 @@
 # DD-Net ([arxiv paper](https://arxiv.org/pdf/1907.09658.pdf))
 (A Double-feature Double-motion Network)
+![](mics/paper.png)
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/make-skeleton-based-action-recognition-model-1/skeleton-based-action-recognition-on-jhmdb-2d)](https://paperswithcode.com/sota/skeleton-based-action-recognition-on-jhmdb-2d?p=make-skeleton-based-action-recognition-model-1)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/make-skeleton-based-action-recognition-model-1/skeleton-based-action-recognition-on-shrec)](https://paperswithcode.com/sota/skeleton-based-action-recognition-on-shrec?p=make-skeleton-based-action-recognition-model-1)
@@ -60,5 +61,5 @@ If you find this code is helpful, thanks for citing our work as,
   year={2019}
 }
 ```
-![](look.gif)
+![](mics/look.gif)
 *Hey, come take a look*
