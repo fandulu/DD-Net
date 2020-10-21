@@ -37,7 +37,7 @@ SHREC raw data download link:   http://www-rech.telecom-lille.fr/shrec2017-hand/
 
 
 ## 3.Problems this code try to alleviate
-<img src="https://github.com/fandulu/DD-Net/blob/master/demo.png" width="500">
+<img src="https://github.com/fandulu/DD-Net/blob/master/mics/demo.png" width="550">
 
 ## 4.Performance
 |No. parameters | SHREC-14 | SHREC-28 |
