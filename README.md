@@ -13,7 +13,7 @@ SHREC-14 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.
 # Update
 Updating code to current Keras environment.
 
-Thanks for [@muxizju](https://github.com/muxizju), [@pengfeiZhao1993](https://github.com/pengfeiZhao1993), and [@YLTsai0609](https://github.com/YLTsai0609) helped to fix bugs in this code. After fixing bugs, the performance is further improved - **JHMDB 82~83% and SHREC-14 96~97 %**.
+Thanks for [@muxizju](https://github.com/muxizju), [@pengfeiZhao1993](https://github.com/pengfeiZhao1993), and [@YLTsai0609](https://github.com/YLTsai0609) helped to fix bugs in this code. After fixing bugs, the performance is further improved - **JHMDB 82-83% and SHREC-14 96-97 %**.
 
 Thanks for [Nightwatch](https://github.com/BlurryLight), who made a pytorch version DD-Net. You can check it at [Pytorch DD-Net](https://github.com/BlurryLight/DD-Net-Pytorch)
 
